@@ -45,7 +45,7 @@ def generate_launch_description():
     ros2_control_params = os.path.join(package_dir, 'resource', 'ros2_control.yml')
     nav2_map = PathJoinSubstitution([package_dir, 'resource', my_map])
     nav2_params = PathJoinSubstitution([package_dir, 'params', nav_params])
-    slam_params = PathJoinSubstitution([package_dir, 'params', slam_params])
+    slam_params = PathJoinSubstitution([package_dir, 'params', slam_params_file])
     use_sim_time = LaunchConfiguration('use_sim_time', default=True)
 
     webots = WebotsLauncher(
@@ -126,7 +126,7 @@ def generate_launch_description():
             ],
             condition=launch.conditions.IfCondition(use_nav)))
             
-     if 'slam_toolbox' in get_packages_with_prefixes():
+    if 'slam_toolbox' in get_packages_with_prefixes():
         optional_nodes.append(IncludeLaunchDescription(
             PythonLaunchDescriptionSource(os.path.join(
                 get_package_share_directory('slam_toolbox'), 'launch', 'online_async_launch.py')),
