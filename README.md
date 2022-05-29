@@ -53,4 +53,10 @@ To save the map, use
 
 ## navigation launch
 
+To run the robot with the navigation stack, run 
+
+`ros2 launch sofar_tiago  sofar_launch.py nav:=true rviz:=true`
+
+Then place the robot using a `2D pose Estimate` and create a goal using a `2D Nav Goal`.
+
 
