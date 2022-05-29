@@ -6,7 +6,12 @@ This simulation works on the ROS galactic distribution.
 
 To use this package you need to first install the `nav2_bringup`, `navigation2`and `slam_toolbox`packages.
 
-`sudo apt-get install 
+`sudo apt-get install ros-galactic-slam-toolbox`
+
+`sudo apt-get install ros-galactic-navigation2`
+
+`sudo apt-get install ros-galactic-nav2-bringup`
+
 
 ## installation 
 
