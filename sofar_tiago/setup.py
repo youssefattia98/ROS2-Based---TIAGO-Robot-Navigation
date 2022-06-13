@@ -4,7 +4,7 @@ package_name = 'sofar_tiago'
 data_files = []
 data_files.append(
     ('share/ament_index/resource_index/packages', ['resource/' + package_name]))
-data_files.append(('share/' + package_name + '/launch', ['launch/sofar_launch.py']))
+data_files.append(('share/' + package_name + '/launch', ['launch/sofar_launch.py', 'launch/sofar_lifelong_launch.py']))
 data_files.append(('share/' + package_name + '/resource', [
     'resource/tiago_webots.urdf',
     'resource/ros2_control.yml',
