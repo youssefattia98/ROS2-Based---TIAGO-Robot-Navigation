@@ -12,12 +12,16 @@ data_files.append(('share/' + package_name + '/resource', [
     'resource/map.pgm',
     'resource/map.yaml',
 ]))
+data_files.append(('share/' + package_name + '/maps', [
+    'maps/test.posegraph',
+    'maps/test.data',
+]))
 data_files.append(('share/' + package_name, ['package.xml']))
 data_files.append(('share/' + package_name + '/worlds', ['worlds/default.wbt', 'worlds/.default.wbproj',
 'worlds/epuck_world.wbt',
 'worlds/.epuck_world.wbproj']))
 data_files.append(('share/' + package_name + '/params', ['params/navigation_params.yaml',
-'params/slam_params.yaml']))
+'params/slam_params.yaml', 'params/slam_params_localization.yaml']))
 
 setup(
     name=package_name,

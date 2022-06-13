@@ -38,14 +38,17 @@ def generate_launch_description():
     mode = LaunchConfiguration('mode')
     nav_params = LaunchConfiguration('nav_params')
     slam_params_file = LaunchConfiguration('slam_params')
+    slam_params_file_local = LaunchConfiguration('slam_params_local')
     use_rviz = LaunchConfiguration('rviz', default=False)
     use_nav = LaunchConfiguration('nav', default=False)
     use_slam = LaunchConfiguration('slam', default=False)
+    use_localization_only = LaunchConfiguration('localization_only', default=False)
     robot_description = pathlib.Path(os.path.join(package_dir, 'resource', 'tiago_webots.urdf')).read_text()
     ros2_control_params = os.path.join(package_dir, 'resource', 'ros2_control.yml')
     nav2_map = PathJoinSubstitution([package_dir, 'resource', my_map])
     nav2_params = PathJoinSubstitution([package_dir, 'params', nav_params])
     slam_params = PathJoinSubstitution([package_dir, 'params', slam_params_file])
+    slam_params_local = PathJoinSubstitution([package_dir, 'params', slam_params_file_local])
     use_sim_time = LaunchConfiguration('use_sim_time', default=True)
 
     webots = WebotsLauncher(
@@ -126,6 +129,17 @@ def generate_launch_description():
             ],
             condition=launch.conditions.IfCondition(use_nav)))
             
+    if 'nav2_bringup' in get_packages_with_prefixes():
+        optional_nodes.append(IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(os.path.join(
+                get_package_share_directory('nav2_bringup'), 'launch', 'navigation_launch.py')),
+            launch_arguments=[
+                ('map', nav2_map),
+                ('use_sim_time', use_sim_time),
+                ('params_file',nav2_params),
+            ],
+            condition=launch.conditions.IfCondition(use_localization_only)))
+            
     if 'slam_toolbox' in get_packages_with_prefixes():
         optional_nodes.append(IncludeLaunchDescription(
             PythonLaunchDescriptionSource(os.path.join(
@@ -135,6 +149,16 @@ def generate_launch_description():
                 ('slam_params_file',slam_params),
             ],
             condition=launch.conditions.IfCondition(use_slam)))
+            
+    if 'slam_toolbox' in get_packages_with_prefixes():
+        optional_nodes.append(IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(os.path.join(
+                get_package_share_directory('slam_toolbox'), 'launch', 'online_async_launch.py')),
+            launch_arguments=[
+                ('use_sim_time', use_sim_time),
+                ('slam_params_file',slam_params_local),
+            ],
+            condition=launch.conditions.IfCondition(use_localization_only)))
 
     return LaunchDescription([
         DeclareLaunchArgument(
@@ -160,6 +184,11 @@ def generate_launch_description():
         DeclareLaunchArgument(
             'slam_params',
             default_value='slam_params.yaml',
+            description='Choose one of the param files from `/sofar_tiago/params` directory'
+        ),
+        DeclareLaunchArgument(
+            'slam_params_local',
+            default_value='slam_params_localization.yaml',
             description='Choose one of the param files from `/sofar_tiago/params` directory'
         ),
         joint_state_broadcaster_spawner,

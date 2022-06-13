@@ -56,6 +56,8 @@ To save the map, use
 
 `ros2 run nav2_map_server map_saver_cli -f ~/map`
 
+To serialize the map in posegraph format, add the slam_toolbox pannel in rviz and click on the "serialize map" button.
+
 ## navigation launch
 
 To run the robot with the navigation stack, run 
@@ -63,5 +65,15 @@ To run the robot with the navigation stack, run
 `ros2 launch sofar_tiago  sofar_launch.py nav:=true rviz:=true`
 
 Then place the robot using a `2D pose Estimate` and create a goal using a `2D Nav Goal`.
+
+## localization only mode 
+
+Once a map has been serialized (i.e. in posegraph format), you MUST add its full path on the "slam_params_localization.yaml" file, and run 
+
+ `ros2 launch sofar_tiago  sofar_launch.py localization_only:=true rviz:=true`
+ 
+ This will allow you to use the slam_toolbox package as localization only using your map file. 
+ 
+ A test file can be used in the /maps folder of the sofar_tiago package
 
 
