@@ -17,7 +17,7 @@ data_files.append(('share/' + package_name + '/worlds', ['worlds/default.wbt', '
 'worlds/epuck_world.wbt',
 'worlds/.epuck_world.wbproj']))
 data_files.append(('share/' + package_name + '/params', ['params/navigation_params.yaml',
-'params/slam_params.yaml']))
+'params/slam_params.yaml', 'params/mapper_params_lifelong.yaml']))
 
 setup(
     name=package_name,
