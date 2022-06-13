@@ -140,6 +140,17 @@ def generate_launch_description():
             ],
             condition=launch.conditions.IfCondition(use_localization_only)))
             
+    if 'nav2_bringup' in get_packages_with_prefixes():
+        optional_nodes.append(IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(os.path.join(
+                get_package_share_directory('nav2_bringup'), 'launch', 'navigation_launch.py')),
+            launch_arguments=[
+                ('map', nav2_map),
+                ('use_sim_time', use_sim_time),
+                ('params_file',nav2_params),
+            ],
+            condition=launch.conditions.IfCondition(use_slam)))
+            
     if 'slam_toolbox' in get_packages_with_prefixes():
         optional_nodes.append(IncludeLaunchDescription(
             PythonLaunchDescriptionSource(os.path.join(
