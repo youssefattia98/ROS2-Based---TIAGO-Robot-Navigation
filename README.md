@@ -33,6 +33,7 @@ These are the launch arguments of the launch file :
 - `slam` : use slam mapping  (default : False)
 - `nav` : use navigation (default : False)
 - `rviz` : use rviz (default : False)
+- `localization_only` : use slam_toolbox in localization mode (defalut : False)
 - `use_sim_time` : use the simulation time(default : True)
 - `world`: choose the current 3D world (default : `default.wbt` file in the worlds directory)
 - `mode`: choose the simulator mode (default : 'realtime')
@@ -52,11 +53,13 @@ To move the robot and create the map, use
 
 and then control the robot using your keyboard.
 
+You can alternatively use nav2 goals to control the robot. 
+
 To save the map, use
 
 `ros2 run nav2_map_server map_saver_cli -f ~/map`
 
-To serialize the map in posegraph format, add the slam_toolbox pannel in rviz and click on the "serialize map" button.
+To serialize the map in posegraph format, add the slam_toolbox pannel in rviz and click on the "serialize map" button. You can also use this pannel to save a map in yaml format.
 
 ## navigation launch
 
