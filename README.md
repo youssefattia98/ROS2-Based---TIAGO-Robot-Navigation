@@ -35,7 +35,7 @@ These are the launch arguments of the launch file :
 - `rviz` : use rviz (default : False)
 - `localization_only` : use slam_toolbox in localization mode (defalut : False)
 - `use_sim_time` : use the simulation time(default : True)
-- `world`: choose the current 3D world (default : `default.wbt` file in the worlds directory, can be replaced with `default2.wbt`)
+- `world`: choose the current 3D world (default : `default.wbt` file in the worlds directory, can be replaced with `default1.wbt` or `default2.wbt`)
 - `mode`: choose the simulator mode (default : 'realtime')
 - `map`: choose the map used for navigation ( default : `map.yaml` file in the resources directory)
 - `slam_params`:choose the parameters for slam mapping (default : `slam_params.yaml` file in the params directory)
