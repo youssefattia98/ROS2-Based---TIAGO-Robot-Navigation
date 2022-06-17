@@ -4,7 +4,7 @@ package_name = 'sofar_tiago'
 data_files = []
 data_files.append(
     ('share/ament_index/resource_index/packages', ['resource/' + package_name]))
-data_files.append(('share/' + package_name + '/launch', ['launch/sofar_launch.py']))
+data_files.append(('share/' + package_name + '/launch', ['launch/sofar_launch.py', 'launch/sofar_lifelong_launch.py']))
 data_files.append(('share/' + package_name + '/resource', [
     'resource/tiago_webots.urdf',
     'resource/ros2_control.yml',
@@ -18,8 +18,7 @@ data_files.append(('share/' + package_name + '/maps', [
 ]))
 data_files.append(('share/' + package_name, ['package.xml']))
 data_files.append(('share/' + package_name + '/worlds', ['worlds/default.wbt', 'worlds/.default.wbproj', 'worlds/default2.wbt', 'worlds/.default2.wbproj']))
-data_files.append(('share/' + package_name + '/params', ['params/navigation_params.yaml',
-'params/slam_params.yaml', 'params/slam_params_localization.yaml']))
+data_files.append(('share/' + package_name + '/params', ['params/navigation_params.yaml','params/slam_params.yaml', 'params/slam_params_localization.yaml', 'params/mapper_params_lifelong.yaml']))
 
 setup(
     name=package_name,
