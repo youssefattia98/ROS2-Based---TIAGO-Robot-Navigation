@@ -79,4 +79,12 @@ Once a map has been serialized (i.e. in posegraph format), you MUST add its full
  
  A test file can be used in the /maps folder of the sofar_tiago package
 
+## Continue mapping mode
 
+If you want to map an environment in several sessions, you can use the continue mapping mode. At the end of one session, you should save the map and its pose graph. In mapper_params_lifelong, the map_file_name (line 33) should be updated for the map name. You can then launch the simulation with:
+
+`ros2 launch sofar_tiago  sofar_launch.py continue:=true rviz:=true`
+
+In rviz, through the slam toolbox plugin, you can then deserialize the pose graph and continue to map the environment.
+As of right now, this mode is experimental and we did not manage to calibrate it well, the mapping is not accurate at all.
+ 
