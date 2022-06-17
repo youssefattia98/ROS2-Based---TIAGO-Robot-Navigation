@@ -17,7 +17,7 @@ data_files.append(('share/' + package_name + '/maps', [
     'maps/test.data',
 ]))
 data_files.append(('share/' + package_name, ['package.xml']))
-data_files.append(('share/' + package_name + '/worlds', ['worlds/default.wbt', 'worlds/.default.wbproj', 'worlds/default2.wbt', 'worlds/.default2.wbproj']))
+data_files.append(('share/' + package_name + '/worlds', ['worlds/default.wbt', 'worlds/.default.wbproj', 'worlds/default1.wbt', 'worlds/.default1.wbproj', 'worlds/default2.wbt', 'worlds/.default2.wbproj']))
 data_files.append(('share/' + package_name + '/params', ['params/navigation_params.yaml',
 'params/slam_params.yaml', 'params/slam_params_localization.yaml']))
 
