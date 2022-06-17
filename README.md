@@ -73,7 +73,12 @@ To run the robot with the navigation stack, run
 
 `ros2 launch sofar_tiago  sofar_launch.py nav:=true rviz:=true`
 
-Then place the robot using a `2D pose Estimate` and create a goal using a `2D Nav Goal`.
+Then place the robot using a `2D pose Estimate` and create a goal using a `2D Nav Goal`.  
+
+
+https://user-images.githubusercontent.com/69837845/174393153-39d8054e-76cc-4d69-89be-7fd954d2678f.mp4
+
+
 
 ## localization only mode 
 
