@@ -173,6 +173,7 @@ def generate_launch_description():
 
     return LaunchDescription([
         DeclareLaunchArgument(
+            #can be replaced with default2.wbt for another world
             'world',
             default_value='default.wbt',
             description='Choose one of the world files from `/sofar_tiago/world` directory'
