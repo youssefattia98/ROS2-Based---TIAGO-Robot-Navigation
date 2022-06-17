@@ -59,7 +59,13 @@ To save the map, use
 
 `ros2 run nav2_map_server map_saver_cli -f ~/map`
 
-To serialize the map in posegraph format, add the slam_toolbox pannel in rviz and click on the "serialize map" button. You can also use this pannel to save a map in yaml format.
+To serialize the map in posegraph format, add the slam_toolbox pannel in rviz and click on the "serialize map" button. You can also use this pannel to save a map in yaml format.  
+
+
+
+https://user-images.githubusercontent.com/69837845/174390819-83c75a17-1627-4436-84c7-cd992dd0aa57.mp4
+
+
 
 ## navigation launch
 
