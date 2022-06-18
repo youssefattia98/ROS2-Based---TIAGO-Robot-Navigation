@@ -88,7 +88,11 @@ Once a map has been serialized (i.e. in posegraph format), you MUST add its full
  
  This will allow you to use the slam_toolbox package as localization only using your map file. 
  
- A test file can be used in the /maps folder of the sofar_tiago package
+ A test file can be used in the /maps folder of the sofar_tiago package  
+ 
+
+https://user-images.githubusercontent.com/69837845/174442485-c8989bb1-29e0-48ab-ae14-dd5b0d39945e.mp4
+ 
 
 ## Continue mapping mode
 
