@@ -103,3 +103,4 @@ If you want to map an environment in several sessions, you can use the continue 
 In rviz, through the slam toolbox plugin, you can then deserialize the pose graph and continue to map the environment.
 As of right now, this mode is experimental and we did not manage to calibrate it well, the mapping is not accurate at all.
  
+https://user-images.githubusercontent.com/69837845/174442839-3877486b-6fde-437f-983a-3c0bfb05f325.mp4
