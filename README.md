@@ -1,4 +1,4 @@
-# SOFAR assignment
+# TIAGO using SLAM and Nav2
 
 ## prerequisites 
 
