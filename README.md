@@ -1,4 +1,4 @@
-# TIAGO using SLAM and Nav2
+# ROS2 Based - TIAGO Robot Navigation
 
 ## prerequisites 
 
